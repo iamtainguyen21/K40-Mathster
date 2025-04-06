@@ -1,0 +1,279 @@
+<!DOCTYPE html> <!-- Khai báo đây là tài liệu HTML5 -->
+<html lang="vi"> <!-- Xác định ngôn ngữ trang là tiếng Việt -->
+<head>
+    <meta charset="UTF-8"> <!-- Định dạng mã ký tự UTF-8 để hỗ trợ tiếng Việt -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Thiết lập hiển thị tốt trên các thiết bị -->
+    <title>Website Lớp Học</title> <!-- Tiêu đề của trang web -->
+    <style>
+        /* Thiết lập kiểu dáng tổng thể cho trang web */
+        
+
+	body { 
+            font-family: Roboto, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            text-align: center; 
+            background-color: #f0f0f0; /* Màu nền xám nhạt */
+        }
+        
+        /* Thiết lập phần header với background là ảnh lớp */
+        header {
+            position: relative;
+            background: url('bg.jpg') no-repeat center center/cover; /* Thay URL bằng ảnh lớp */
+            height: 400px; /* Đặt chiều cao cố định để duy trì tỷ lệ */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Lớp phủ màu đen mờ trên ảnh */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Màu đen với độ trong suốt 50% */
+        }
+        
+        /* Đảm bảo nội dung trong header hiển thị phía trên lớp phủ */
+        header h1, header p {
+            position: relative;
+            z-index: 1;
+        }
+        
+        nav { background: #5a9f68; padding: 10px; } /* Thanh điều hướng với nền xanh đậm hơn */
+        nav a { color: white; margin: 10px; text-decoration: none; font-weight: bold; } /* Định dạng các liên kết trong menu */
+        
+        /* Thiết lập khung trắng bo góc cho mỗi section */
+        section { 
+            background: white;
+            padding: 20px; 
+            margin: 20px auto; 
+            width: 80%; 
+            border-radius: 10px; 
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho khung */
+        }
+        
+        
+        /* Thiết lập phần danh sách thành viên */
+        .member-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .member {
+            width: 18%; /* 5 ảnh trên một hàng */
+            text-align: center;
+        }
+        .member img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .member p {
+            margin-top: 5px;
+            font-weight: bold;
+        }        
+
+    	/* CSS cho con số nổi bật */
+    	.highlight-number {
+        	font-size: 2em; /* Tăng kích thước con số lên gấp đôi so với phần văn bản */
+        	font-weight: bold; /* Làm đậm con số */
+        	color: #6586e6; /* Màu nổi bật */
+    	}
+
+        /* Căn giữa nội dung của bảng */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Xóa khoảng cách giữa các cell */
+        }
+
+        th, td {
+
+            padding: 10px;
+            text-align: center; /* Căn giữa theo chiều ngang */
+            vertical-align: middle; /* Căn giữa theo chiều dọc */
+        }
+
+        /* Container chứa thư viện ảnh */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Tự động điều chỉnh số cột */
+            gap: 20px; /* Khoảng cách giữa các ảnh */
+            padding: 20px;
+            max-width: 90%;
+            justify-items: center;
+        }
+
+        /* Các ảnh trong thư viện */
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            max-width: 300px; /* Kích thước tối đa của ảnh */
+            border-radius: 10px;
+            overflow: hidden; /* Ẩn phần ảnh vượt ra ngoài khung */
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho ảnh */
+            transition: transform 0.3s ease; /* Hiệu ứng khi hover */
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05); /* Phóng to ảnh khi hover */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Caption dưới mỗi ảnh */
+        .caption {
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            text-align: center;
+            font-size: 1em;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+
+
+        footer { background: #2c3e50; color: white; padding: 10px; margin-top: 20px; } /* Chân trang với nền tối */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to MATHSTERLAND</h1> <!-- Tiêu đề chính của trang -->
+        <p>Class of 2025</p> <!-- Slogan của lớp -->
+    </header>
+    <nav>
+        <!-- Thanh điều hướng đến các phần khác của trang -->
+        <a href="#about">Giới thiệu</a>
+        <a href="#class-members">Danh sách lớp</a>
+        <a href="#gallery">Thư viện ảnh</a>
+        <a href="#achievements">Thành tích</a>
+        <a href="#members">Liên hệ</a>
+    </nav>
+    <section id="about"> <!-- Phần giới thiệu về lớp -->
+        <h2>Giới thiệu</h2>
+        <p>Mathster - K40 Chuyên Toán - THPT Chuyên Hùng Vương</p>
+        <p>Giáo viên chủ nhiệm: Cô Phạm Thị Thu Hiền</p>
+    </section>
+
+    <section id="class-members"> <!-- Phần danh sách thành viên lớp -->
+        <h2>Thành viên lớp</h2>
+        <div class="member-list">
+            <!-- Tạo 30 thành viên với ảnh mẫu và tên -->
+            <!-- Có 5 ảnh trên một hàng -->
+            
+	<script>
+    	const names = [
+        	"Nguyễn Đức Anh", "Quản Tiến Anh", "Nguyễn Anh Dũng", "Quách Hoàng Dũng", "Bùi Thị Thùy Dương",
+        	"Hoàng Công Đạt", "Đỗ Ngọc Điệp", "Nguyễn Phùng Đức Hiệp", "Tạ Gia Huy", "Ngô Quang Hưng",
+        	"Nguyễn Bùi Việt Hưng", "Nguyễn Phúc Hưng", "Nguyễn Ngân Hương", "Đào Duy Khánh", "Lê Nam Khánh",
+        	"Đinh Quang Khải", "Lê Văn Kiệt", "Nguyễn Thị Mai Lan", "Trần Bình Minh", "Trần Thảo Nhi",
+        	"Đỗ Khánh Phương", "Nguyễn Tiến Quân", "Tạ Đức Quý", "Nguyễn Tiến Tài", "Tạ Đức Tài",
+        	"Lương Phước Tiến", "Nguyễn Thành Trung", "Nguyễn Thanh Tú", "Hoàng Minh Vũ", "Nguyễn Thế Vượng"
+    	];
+
+    	const images = [
+        	"ducanh.jpg", "qta.jpg", "anhdung.jpg", 
+        	"hoangdung.jpg", "thuyduong.jpg", "hcd.jpg", 
+        	"dnd.jpg", "duchiep.jpg", "tgh.jpg", 
+        	"quanghung.jpg", "nbvh.jpg", "phuchung.jpg", 
+        	"nnh.jpg", "duykhanh.jpg", "namkhanh.jpg", 
+        	"quangkhai.jpg", "lvk.jpg", "mlan.jpg", 
+        	"binhminh.jpg", "thaonhi.jpg", "dkp.jpg", 
+        	"tienquan.jpg", "tdq.jpg", "tainguyen.jpg", 
+        	"ductai.jpg", "phuoctien.jpg", "thanhtrung.jpg", 
+        	"ntt.jpg", "minhvu.jpg", "thevuong.jpg"
+    	];
+
+    
+
+    	for (let i = 0; i < 30; i++) {
+        	document.write(`<div class="member">
+            	<img src="${images[i]}" alt="Thành viên ${i+1}">
+            	<p>${names[i]}</p>
+        	</div>`);
+    	}
+	</script>
+        </div>
+    </section>
+
+    <section id="gallery"> <!-- Phần thư viện ảnh -->
+    
+    <h2>Thư viện ảnh</h2>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="kiyeu.jpg" alt="Ảnh 1">
+            <div class="caption">Kỉ yếu lớp 12</div>
+        </div>
+        <div class="gallery-item">
+            <img src="khaigiang.jpg" alt="Ảnh 2">
+            <div class="caption">Khai giảng năm lớp 10</div>
+        </div>
+        <div class="gallery-item">
+            <img src="quansu.jpg" alt="Ảnh 3">
+            <div class="caption">Quân sự năm lớp 11</div>
+        </div>
+	<div class="gallery-item">
+            <img src="vannghe.jpg" alt="Ảnh 3">
+            <div class="caption">Văn nghệ năm lớp 12</div>
+        </div>
+        <!-- Thêm ảnh khác tại đây -->
+    </div>
+
+
+    </section>
+
+
+    <section id="achievements"> <!-- Phần thành tích và dự án của lớp -->
+        <h2>Thành tích</h2>
+	
+	<table>
+	<tr> <th><h3>Học tập</h3> </th>  <th><h3>Hoạt động ngoại khóa</h3> </th> </tr>
+    	<tr>
+	    <th>	
+		<p><span class="highlight-number">2</span> giải ba HSGQG môn Toán</p>
+    		<p><span class="highlight-number">3</span> giải khuyến khích HSGQG</p>
+    		<p><span class="highlight-number">3</span> giải nhất học sinh giỏi cấp tỉnh</p>
+	    </th>
+
+	    <th>	
+		<p><span class="highlight-number">3</span> lần vô địch CHV CUP</p>
+    		<p><span class="highlight-number">2</span> lần giải nhất văn nghệ</p>
+    		<p><span class="highlight-number">1</span> lần giải nhì văn nghệ</p>
+		
+	    </th>
+
+	</tr>
+      
+	
+	
+	
+	</table>
+
+
+    </section>
+
+
+    <section id="members"> <!-- Phần danh sách thành viên và liên hệ -->
+        <h2>Liên hệ</h2>
+        <p><b> Lớp trưởng: </b> Nguyễn Thành Trung</p>
+	<p><b> Bí thư: </b> Đinh Quang Khải</p>
+        <p>Facebook lớp: <a href="https://www.facebook.com/profile.php?id=100084279828230&locale=vi_VN">Mathster</a></p> 
+	<p>Tiktok lớp: <a href="https://www.tiktok.com/@mathster.k40.toan">mathster.k40.toan</a></p> 
+    </section>
+
+
+    <footer> <!-- Chân trang của website -->
+        <p>&copy; K40 MATHSTER - OFFICIAL WEBSITE</p>
+    </footer>
+</body>
+</html>
