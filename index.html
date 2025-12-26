@@ -65,11 +65,21 @@
         }
         .member {
             width: 18%; /* 5 ảnh trên một hàng */
+            padding-left: 15px;
+            padding-right: 15px;
+            /* padding-bottom: 10px; */
             text-align: center;
         }
         .member img {
             width: 100%;
             border-radius: 10px;
+            transition: transform 0.4s ease;
+            
+        }
+
+        .member img:hover {
+            transform: scale(1.2); /* Phóng to ảnh khi hover */
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.144);
         }
         .member p {
             margin-top: 5px;
@@ -119,7 +129,8 @@
         }
 
         .gallery-item:hover {
-            transform: scale(1.05); /* Phóng to ảnh khi hover */
+            transform: scale(1.3); /* Phóng to ảnh khi hover */
+            z-index: 999;
         }
 
         .gallery-item img {
@@ -151,6 +162,18 @@
         <p>Class of 2025</p> <!-- Slogan của lớp -->
     </header>
     <nav>
+
+        <style>
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+
         <!-- Thanh điều hướng đến các phần khác của trang -->
         <a href="#about">Giới thiệu</a>
         <a href="#class-members">Danh sách lớp</a>
@@ -160,7 +183,7 @@
     </nav>
     <section id="about"> <!-- Phần giới thiệu về lớp -->
         <h2>Giới thiệu</h2>
-        <p>Mathster - K40 Chuyên Toán - THPT Chuyên Hùng Vương</p>
+        <p style="font-family: Arial;">Mathster - K40 Chuyên Toán - THPT Chuyên Hùng Vương</p>
         <p>Giáo viên chủ nhiệm: Cô Phạm Thị Thu Hiền</p>
     </section>
 
@@ -222,7 +245,8 @@
             <img src="quansu.jpg" alt="Ảnh 3">
             <div class="caption">Quân sự năm lớp 11</div>
         </div>
-	<div class="gallery-item">
+
+	    <div class="gallery-item">
             <img src="vannghe.jpg" alt="Ảnh 4">
             <div class="caption">Văn nghệ năm lớp 12</div>
         </div>
