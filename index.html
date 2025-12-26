@@ -90,6 +90,7 @@
     	.highlight-number {
         	font-size: 2em; /* Tăng kích thước con số lên gấp đôi so với phần văn bản */
         	font-weight: bold; /* Làm đậm con số */
+            /* text-align: left; */
         	color: #6586e6; /* Màu nổi bật */
     	}
 
@@ -251,6 +252,38 @@
             <div class="caption">Văn nghệ năm lớp 12</div>
         </div>
         <!-- Thêm ảnh khác tại đây -->
+
+        <style>
+            .g_video {
+                width: 100%;
+                max-width: 300px; /* Bằng với độ rộng của gallery-item */
+                border-radius: 10px;
+                overflow: hidden; /* Bo góc cho video */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                background: #000;
+                display: flex;
+                align-items: center;
+                transition: transform 0.3s ease;
+            }
+
+            .g_video video {
+                width: 100%; /* Ép video luôn nằm gọn trong khung 300px */
+                height: auto;
+                display: block;
+            }
+
+            /* Thêm hiệu ứng phóng to cho đồng bộ với ảnh */
+            .g_video:hover {
+                transform: scale(1.1);
+                z-index: 999;
+            }
+        </style>
+
+        <div class="g_video">
+            <video src="20_11_2024.mp4" type="video/mp4" alt="20_11_2024" controls></video>
+            <div class="caption">Ngày lễ 20-11-2024</div>
+        </div>
+
     </div>
 
 
@@ -261,26 +294,43 @@
         <h2>Thành tích</h2>
 	
 	<table>
-	<tr> <th><h3>Học tập</h3> </th>  <th><h3>Hoạt động ngoại khóa</h3> </th> </tr>
-    	<tr>
-	    <th>	
-		<p><span class="highlight-number">2</span> giải ba HSGQG môn Toán</p>
-    		<p><span class="highlight-number">3</span> giải khuyến khích HSGQG</p>
-    		<p><span class="highlight-number">3</span> giải nhất học sinh giỏi cấp tỉnh</p>
-	    </th>
 
-	    <th>	
-		<p><span class="highlight-number">3</span> lần vô địch CHV CUP</p>
-    		<p><span class="highlight-number">2</span> lần giải nhất văn nghệ</p>
-    		<p><span class="highlight-number">1</span> lần giải nhì văn nghệ</p>
-		
-	    </th>
+        <tr>
+            <th>Học tập</th> 
+            <th>Hoạt động ngoại khóa</th>
+        </tr>
 
-	</tr>
-      
-	
-	
-	
+        <style>
+            td p {
+                text-align: justify;
+                padding-left: 140px;
+            }
+        </style>
+
+        <tr>
+            <td>
+                <p><span class="highlight-number">2</span> giải ba HSGQG môn Toán</p>
+            </td>
+            <td>
+                <p><span class="highlight-number">3</span> lần vô địch CHV CUP</p>
+        </tr>    
+
+        <tr>
+            <td>
+                <p><span class="highlight-number">3</span> giải khuyến khích HSGQG</p>
+            </td>
+            <td>
+                <p><span class="highlight-number">2</span> lần giải nhất văn nghệ</p>
+        </tr>
+
+        <tr>
+            <td>
+                <p><span class="highlight-number">3</span> giải nhất học sinh giỏi cấp tỉnh</p>
+            </td>
+            <td>
+                <p><span class="highlight-number">1</span> lần giải nhì văn nghệ</p>
+            </td>
+        </tr>
 	</table>
 
 
@@ -301,5 +351,6 @@
     </footer>
 </body>
 </html>
+
 
 
