@@ -10,7 +10,7 @@
         
 
 	body { 
-            font-family: Roboto, sans-serif; 
+            font-family: Arial, Helvetica, sans-serif, sans-serif; 
             margin: 0; 
             padding: 0; 
             text-align: center; 
@@ -108,13 +108,23 @@
             vertical-align: middle; /* Căn giữa theo chiều dọc */
         }
 
+        .achivement-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Hai cột bằng nhau */
+        }
+
+        .achivement-info {
+            flex-direction: column;
+            /* align-self: stretch; */
+        }
+
         /* Container chứa thư viện ảnh */
         .gallery-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Tự động điều chỉnh số cột */
-            gap: 20px; /* Khoảng cách giữa các ảnh */
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Tự động điều chỉnh số cột */
+            gap: 35px; /* Khoảng cách giữa các ảnh */
             padding: 20px;
-            max-width: 90%;
+            max-width: 100%;
             justify-items: center;
         }
 
@@ -122,7 +132,7 @@
         .gallery-item {
             position: relative;
             width: 100%;
-            max-width: 400; /* Kích thước tối đa của ảnh */
+            max-width: 500px; /* Kích thước tối đa của ảnh */
             border-radius: 10px;
             overflow: hidden; /* Ẩn phần ảnh vượt ra ngoài khung */
             background-color: #fff;
@@ -301,49 +311,26 @@
     </section>
 
 
-    <section id="achievements"> <!-- Phần thành tích và dự án của lớp -->
+
+
+    <section id="achievements">
         <h2>Thành tích</h2>
-	
-	<table>
 
-        <tr>
-            <th>Học tập</th> 
-            <th>Hoạt động ngoại khóa</th>
-        </tr>
-
-        <style>
-            td p {
-                text-align: justify;
-                padding-left: 140px;
-            }
-        </style>
-
-        <tr>
-            <td>
+        <div class = "achivement-table">
+            <div class = "achivement-info">
+                <h3>Học tập</h3>
                 <p><span class="highlight-number">2</span> giải ba HSGQG môn Toán</p>
-            </td>
-            <td>
-                <p><span class="highlight-number">3</span> lần vô địch CHV CUP</p>
-        </tr>    
-
-        <tr>
-            <td>
                 <p><span class="highlight-number">3</span> giải khuyến khích HSGQG</p>
-            </td>
-            <td>
-                <p><span class="highlight-number">2</span> lần giải nhất văn nghệ</p>
-        </tr>
-
-        <tr>
-            <td>
                 <p><span class="highlight-number">3</span> giải nhất học sinh giỏi cấp tỉnh</p>
-            </td>
-            <td>
-                <p><span class="highlight-number">1</span> lần giải nhì văn nghệ</p>
-            </td>
-        </tr>
-	</table>
+            </div>
 
+            <div class="achivement-info"> 
+                <h3>Hoạt động ngoại khóa</h3>
+                <p><span class="highlight-number">3</span> lần vô địch CHV CUP</p>
+                <p><span class="highlight-number">2</span> lần giải nhất văn nghệ</p>
+                <p><span class="highlight-number">1</span> lần giải nhì văn nghệ</p>
+            </div>
+        </div>
 
     </section>
 
@@ -362,7 +349,6 @@
     </footer>
 </body>
 </html>
-
 
 
 
